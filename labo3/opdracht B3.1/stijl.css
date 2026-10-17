@@ -1,0 +1,154 @@
+/* GECORRIGEERDE AI CSS */
+
+/* ========== 1. Kleuren en vorm ========== */
+:root {
+  --kleur-tekst: #2f3525;
+  --kleur-tekst-zacht: #626a50;
+  --kleur-achtergrond: #f4f5ec;
+  --kleur-vlak: #fffef8;
+  --kleur-lijn: #d9ddc8;
+  --kleur-accent: #68743b;
+  --kleur-accent-donker: #46512a;
+
+  --radius: 0.75rem;
+  --schaduw-zacht: 0 3px 12px rgba(47, 53, 37, 0.08);
+  --schaduw-hover: 0 6px 18px rgba(47, 53, 37, 0.14);
+}
+
+/* ========== 2. Basis ========== */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--kleur-tekst);
+  background: var(--kleur-achtergrond);
+}
+
+a {
+  color: var(--kleur-accent-donker);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--kleur-accent);
+}
+
+/* ========== 3. Gecentreerde inhoud ========== */
+header, main, footer {
+  box-sizing: border-box;
+  width: min(100% - 2rem, 42rem);
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+/* ========== 4. Koppen, tekst en afstanden ========== */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 1rem;
+  line-height: 1.25;
+  color: var(--kleur-accent-donker);
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p, ul, ol, figure, blockquote, table {
+  margin: 0 0 1rem;
+}
+
+ul, ol {
+  display: inline-block;
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+main > :last-child,
+.kaartje > :last-child {
+  margin-bottom: 0;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+/* ========== 5. Navigatie ========== */
+nav {
+  padding: 0.75rem 1rem;
+  background: var(--kleur-accent-donker);
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  color: var(--kleur-vlak);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+nav a:hover {
+  color: var(--kleur-vlak);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ========== 6. Kaartjes ========== */
+.kaartje {
+  width: min(100% - 2rem, 38rem);
+  box-sizing: border-box;
+  margin: 0 auto 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  background: var(--kleur-vlak);
+  border: 1px solid var(--kleur-lijn);
+  border-radius: var(--radius);
+  box-shadow: var(--schaduw-zacht);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.kaartje:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--schaduw-hover);
+}
+
+.kaartje img,
+main img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 1rem;
+  border-radius: var(--radius);
+}
+
+/* ========== 7. Footer ========== */
+footer {
+  margin-top: 2rem;
+  color: var(--kleur-tekst-zacht);
+  font-size: 0.875rem;
+  border-top: 1px solid var(--kleur-lijn);
+}
+
+footer p {
+  margin-bottom: 0.25rem;
+}

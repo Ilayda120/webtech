@@ -1,0 +1,226 @@
+/*
+
+AI: CHATGPT
+ZIE HELEMAAL ONDERAAN VOOR PROMPT
+
+*/
+
+/* Stroom — warme, rustige koffiebarstijl */
+:root {
+  --papier: #fbf7f0;
+  --inkt: #2b2b2b;
+  --gedempt: #6b6b6b;
+  --accent: #b5451b;
+  --zebra: #f1e9dc;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--inkt);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+header, main, footer {
+  width: min(100% - 2.5rem, 48rem);
+  margin-inline: auto;
+}
+
+header {
+  padding: 3.5rem 0 2rem;
+  border-bottom: 1px solid var(--zebra);
+}
+
+h1, h2, h3, p { margin-top: 0; }
+h1 {
+  margin-bottom: 0;
+  color: var(--accent);
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+
+.slogan {
+  margin: 0.85rem 0 1.8rem;
+  color: var(--gedempt);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+nav a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+nav a:hover, nav a:focus-visible {
+  color: var(--inkt);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+main { padding: 2.5rem 0 3rem; }
+article { max-width: 38rem; }
+h2 {
+  margin: 2.8rem 0 1rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--zebra);
+  color: var(--accent);
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  scroll-margin-top: 1rem;
+}
+article h2:first-child { margin-top: 0; }
+h3 { margin: 1.7rem 0 0.6rem; font-size: 1.25rem; }
+.intro { font-size: 1.2rem; line-height: 1.55; }
+
+.kaart {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.kaart li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.38rem 0.65rem;
+  border-bottom: 1px solid var(--papier);
+}
+.kaart li:nth-child(odd) { background: var(--zebra); }
+.prijs { flex: 0 0 auto; font-variant-numeric: tabular-nums; }
+
+ol { padding-left: 1.4rem; }
+ol li { padding-left: 0.25rem; margin-bottom: 0.45rem; }
+article a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+article a:hover, article a:focus-visible {
+  color: var(--papier);
+  background: var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+footer {
+  padding: 1.5rem 0 2rem;
+  border-top: 1px solid var(--zebra);
+  color: var(--gedempt);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+footer p { margin-bottom: 0.35rem; }
+footer a { color: var(--gedempt); }
+footer a:hover, footer a:focus-visible { color: var(--accent); }
+
+@media (max-width: 34rem) {
+  header, main, footer { width: min(100% - 2rem, 48rem); }
+  header { padding-top: 2.5rem; }
+  nav ul { gap: 0.4rem 1rem; }
+  .kaart li { gap: 0.5rem; }
+}
+
+
+/*
+AI: CHATGPT
+PROMPT:
+
+zie opdracht:
+met AI: vraag een model om een stylesheet voor nabouw/index.html (geef het de HTML en de vijf kleuren mee) en bewaar je prompt en de onbewerkte output in labo-02/review/ .
+papier #fbf7f0 , inkt #2b2b2b , gedempt #6b6b6b , accent #b5451b , zebra #f1e9dc
+
+dus maw, genereer voor mij een css!
+gebruik hiervoor onderstaande code:
+<!-- index.html - nabouw labo 2. Dit bestand mag je NIET wijzigen: geen class erbij, geen element verplaatst, geen style-attribuut. Jij schrijft css/stijl.css. -->
+<!--
+  Wat het screenshot niet kan tonen (hover en focus):
+  - links in de navigatie: accentkleur, vet, geen onderstreping;
+    bij hover en focus: inktkleur en onderstreept
+  - links in main: accentkleur, onderstreept;
+    bij hover en focus: papierkleur op een achtergrond in de accentkleur
+  - links in de footer: gedempte kleur; bij hover en focus: accentkleur
+-->
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stroom - koffiebar aan het Eilandje</title>
+    <link rel="stylesheet" href="css/zen.css">
+  </head>
+  <body>
+    <header>
+      <h1>Stroom</h1>
+      <p class="slogan">Koffiebar aan het Eilandje, Antwerpen</p>
+      <nav>
+        <ul>
+          <li><a href="#kaart">De kaart</a></li>
+          <li><a href="#bonen">Onze bonen</a></li>
+          <li><a href="#praktisch">Praktisch</a></li>
+        </ul>
+      </nav>
+    </header>
+
+<main>
+  <article>
+    <h2 id="kaart">De kaart</h2>
+    <p class="intro">Kort en goed: koffie van één branderij, melk van één boer, en elke dag iets zoets uit onze eigen oven.</p>
+    <p>We veranderen de kaart met de seizoenen. Wat hieronder staat, is wat je deze maand krijgt. Prijzen zijn in euro en staan ook op het bord boven de toog.</p>
+
+    <h3>Koffie</h3>
+    <ul class="kaart">
+      <li>Espresso <span class="prijs">2,60</span></li>
+      <li>Cortado <span class="prijs">3,00</span></li>
+      <li>Flat white <span class="prijs">3,80</span></li>
+      <li>Filterkoffie, per kan <span class="prijs">4,50</span></li>
+      <li>Koude bereiding, in de zomer <span class="prijs">4,00</span></li>
+    </ul>
+
+    <h3>Zoet</h3>
+    <ul class="kaart">
+      <li>Kaneelbroodje <span class="prijs">3,20</span></li>
+      <li>Bananenbrood <span class="prijs">3,00</span></li>
+      <li>Koek van de dag <span class="prijs">2,50</span></li>
+    </ul>
+
+    <h2 id="bonen">Onze bonen</h2>
+    <p>Onze koffie komt van <a href="https://www.example.be">een kleine branderij in Berchem</a>, die elke week brandt en elke dinsdag levert. Wat je drinkt, is nooit ouder dan tien dagen.</p>
+    <p>Waarom dat telt, in drie stappen:</p>
+    <ol>
+      <li>Verse bonen hebben nog al hun aroma's; na een maand is de helft weg.</li>
+      <li>Een kleine branderij brandt per soort, niet per ton.</li>
+      <li>Korte ketens betekenen een eerlijke prijs voor de boer.</li>
+    </ol>
+
+    <h2 id="praktisch">Praktisch</h2>
+    <p>Open van dinsdag tot zondag, van 8 tot 18 uur. <strong>Maandag gesloten.</strong></p>
+    <p>We werken <em>zonder reservaties</em>: wie er is, is er. Voor groepen van meer dan zes stuur je best een mailtje.</p>
+  </article>
+</main>
+
+<footer>
+  <p>Stroom, Londenstraat 12, 2000 Antwerpen</p>
+  <p><a href="https://www.instagram.com">Instagram</a> - <a href="mailto:hallo@stroom.be">hallo@stroom.be</a></p>
+</footer>
+  </body>
+</html>
+
+*/
