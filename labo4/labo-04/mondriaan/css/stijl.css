@@ -1,0 +1,69 @@
+/* stijl.css - labo 4, mondriaan (reset.css is linked before this file) */
+
+/* === tokens === */
+:root {
+    --blauw: #2554ab; 
+    --lila: #a090af; 
+    --bruin: #a16122;
+    --geel: #e7c948; 
+    --marine: #13234e; 
+    --olijf: #ae9310; 
+    --rood: #cd2424;
+}
+
+/* === your rules === */
+
+.schilderij {
+    display: grid;
+    width: 70vh;
+    height: 70vh;
+    margin: 15vh 60vh; /* boven/onder , links/rechts ^^ */
+    
+    border: 2vh solid var(--blauw); /* solid zorgt ervoor dat de border er staat girl */
+    gap: 2vh;
+    background-color: var(--blauw);
+
+    flex-direction: column;
+    grid-template-columns: 1fr 2fr 1fr; /* Maakt drie kolommen; de middelste krijgt 2 keer zoveel vrije ruimte. */
+    grid-template-rows: repeat(3, 1fr);
+}
+
+/* Linkerkant c: */
+
+.lila {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    background-color: var(--lila);
+}
+
+.geel {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: var(--geel);
+}
+
+.olijf {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    background-color: var(--olijf);
+}
+
+/* Rechterkant */
+
+.bruin {
+    grid-column: 3;
+    grid-row: 1;
+    background-color: var(--bruin);
+}
+
+.marine {
+    grid-column: 3;
+    grid-row: 2;
+    background-color: var(--marine);
+}
+
+.rood {
+    grid-column: 3;
+    grid-row: 3;
+    background-color: var(--rood);
+}

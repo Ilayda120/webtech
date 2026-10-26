@@ -1,0 +1,66 @@
+/* stijl.css - labo 4, navigatie (reset.css is linked before this file) */
+/* === tokens === */
+:root {
+    --balk: #1f3a2e;
+    --tekst: #f3efe6;
+    --accent: #e6b53c;
+}
+
+/* === your rules === */
+
+header {
+    font-family: verdana, sans-serif;
+    background-color: var(--balk);
+    padding: 1rem 2rem;
+    display: flex; /* dubbel flex nodig: deze zet het logo en nav naast elkaar. */
+    justify-content: space-between;
+    align-items: center;
+    /*
+    oké dus:
+    align-items: center lijnt inhoud van header verticaal in het midden uit.
+    display: flex zet het logo en de navigatie daarna naast elkaar. 
+    En justify-content: space-between duwt het inhoud van header uitelkaar. 
+    -> header= .logo en nav
+    */
+}
+
+.logo {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.actief {
+    color: var(--balk);
+    font-size: 1rem;
+    background-color: var(--accent);
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+.actief:hover,
+.actief:focus {
+    text-decoration: underline;
+}
+
+nav ul {
+    display: flex; /* en deze zet de links naast elkaar ^^ */
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    color: var(--tekst);
+    font-size: 1rem;
+    gap: 0.5rem;
+}
+
+nav ul li a {
+    display: block;
+    color: var(--tekst);
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+}

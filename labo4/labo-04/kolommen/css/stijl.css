@@ -1,0 +1,46 @@
+/* stijl.css - labo 4, kolommen (reset.css is linked before this file) */
+
+/* === tokens === */
+
+/* === your rules === */
+
+main {
+    display: flex;
+    gap: 4vw;
+    padding: 10vh 4vw;
+    min-height: 100vh;
+}
+
+main > div {
+    color: white;
+    font: arial, sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+
+    justify-content: center;
+    text-align: center;
+
+    display: grid;
+    place-items: center;
+    
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+
+    gap: 4vw;
+}
+
+div:nth-child(1) {
+  background-color: darkturquoise;
+  flex: 1 
+  /* flex bepaalt hoe een flex-item 
+  ruimte inneemt binnen een flex-container */
+}
+
+div:nth-child(2) {
+  background-color: darkviolet;
+  flex: 2;
+}
+
+div:nth-child(3) {
+  background-color: deepskyblue;
+  flex: 1;
+}
