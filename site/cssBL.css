@@ -1,0 +1,138 @@
+:root {
+    --inkt: #2f3525;
+    --gedempt: #a6b38b;
+    --papier: #f4efe6;
+    --kaarten: #fffef8;
+    --kleur-lijn: #d9ddc8;
+    --accent: #68743b;
+    --accentD: #46512a;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+/*      BASIS VOOR GSM      */
+
+body {
+    background-color: var(--papier);
+    color: var(--inkt);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+.pagina {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*      BALK        */
+
+nav {
+    background-color: var(--accentD);
+    padding: 0.75rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav li {margin: 0.5rem 0;}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 2rem;
+}
+nav a:hover {text-decoration: underline;}
+
+/*      INHOUD      */
+
+header {
+    background-color: var(--accent);
+    color: var(--kaarten);
+    text-align: center;
+
+    margin: 1.25rem 0;
+    padding: 1.5rem 1rem;
+}
+
+h1 {font-size: 2rem;}
+
+main {
+    display: flex;
+    flex-direction: column;
+    /*bovenstaand zet alles mooi onder elkaar op gsm scherm*/
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    width: 100%;
+}
+
+.kaart {
+    background-color: var(--kaarten);
+    border: 0.12rem solid var(--kleur-lijn);
+    padding: 1.25rem;
+}
+
+.kaart h2 {
+    color: var(--accentD);
+    line-height: 3rem;
+    margin-bottom: 0.5rem;
+
+    border-bottom: 0.25rem solid var(--accentD);
+    border-radius: 0.25rem;
+}
+.kaart h3 {margin-bottom: 0.75rem;}
+
+.recept {
+    background-color: var(--papier);
+    border-radius: 2rem;
+    padding: 1rem 1rem;
+
+    color: var(--accent);
+}
+
+.recept p {
+    line-height: 1.5; /* afstand tussen regels binnen één stap */
+    margin-bottom: 1.5rem; /* ruimte onder elke stap */
+}
+.recept p:last-child {
+    margin-bottom: 0; /* geen extra ruimte na de laatste stap */
+}
+
+.recept a {color: var(--gedempt);}
+
+
+/*      FOOTER        */
+
+footer {
+    background-color: var(--accent);
+    color: white;
+    text-align: center;
+
+    margin-top: 1.25rem;
+    padding: 1rem;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+@media (min-width: 48rem) {
+    .pagina {width: 100%; }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    nav li {margin: 0;}
+
+    h1 {font-size: 2.25rem;}
+
+    main {flex-direction: row;}
+
+    .kaart {flex: 1;}
+}

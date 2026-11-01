@@ -1,0 +1,151 @@
+:root {
+    --inkt: #2f3525; 
+    --gedempt: #626a50; 
+    --papier: #f4efe6;
+    --kaarten: #fffef8; 
+    --kleur-lijn: #d9ddc8; 
+    --accent: #68743b; 
+    --accentD: #46512a;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+html {scroll-padding-top: 3.5rem; }
+
+body { 
+    background: var(--papier); 
+    color: var(--inkt); 
+    font-family: Verdana, sans-serif; 
+    line-height: 1.5;
+}
+
+/*      BALK        */
+
+nav {
+    background-color: var(--accentD);
+    position: sticky; 
+
+    top: 0;
+    z-index: 1; 
+    height: 3.5rem; 
+
+    display: flex; 
+    align-items: center; 
+    padding: 0 2rem; 
+}
+
+nav ul { 
+    display: flex; 
+    gap: 1.5rem; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+}
+nav a { color: var(--kaarten); text-decoration: none; }
+nav a:hover, nav a:focus-visible { color: var(--kleur-lijn); }
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+.pagina {
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "aside main"
+        "footer footer";
+    min-height: calc(100vh - 3.5rem);
+}
+
+header {
+    grid-area: header;
+    padding: 2rem 2rem 0;
+}
+header h1 {font-size: 1.5rem;}
+
+/*      ZIJBALK     */
+
+aside {
+    grid-area: aside;
+
+    padding: 2rem;
+    font-size: 0.875rem;
+    border-right: 1px solid var(--kleur-lijn);
+}
+
+aside h2 { font-size: 1rem; margin-bottom: 1rem; }
+aside h3 { font-size: 0.85rem; margin-bottom: 0.25rem; }
+aside p { color: var(--gedempt); margin-bottom: 1rem; }
+
+aside a { color: var(--accent); }
+aside a:hover { color: var(--accentD); }
+
+/* Zijbalk gekozen om extra info over mijn hobby's apart te houden van de hoofdinhoud. */
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+/*      KAART (it took so long ToT)     */
+
+main {
+    grid-area: main;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: start;
+
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.badge {
+    background: var(--accent);
+    border-radius: 1rem;
+
+    color: var(--kaarten);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+
+    position: absolute;
+
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 1;
+    padding: 0.25rem 0.75rem;
+}
+
+.kaart {
+    background: var(--kaarten);
+    border: 1px solid var(--kleur-lijn);
+    border-radius: 1rem;
+    
+    position: relative; 
+    padding: 1.5rem; 
+    overflow: hidden;
+
+    display: grid;
+    align-content: start; /* houd tekst boven :> */
+}
+
+.kaart p { color: var(--gedempt); }
+.kaart a { color: var(--accent); }
+
+.kaart img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover; /* Neemt scherpe hoeken van foto weg */
+}
+
+.kaart:has(img) { padding: 0; }
+.kaart:has(img) .tekst { padding: 1.5rem; }
+.kaart:not(:has(img)) { border-top: 0.5rem solid var(--accent); }
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+footer {
+    grid-area: footer;
+
+    background: var(--accentD);
+    color: var(--kaarten);
+    text-align: center;
+    padding: 1rem 2rem;
+}

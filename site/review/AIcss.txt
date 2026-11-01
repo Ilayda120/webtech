@@ -1,0 +1,132 @@
+/* stijl.css - B3.1 boxmodel
+   Gelinkt NA reset.css. De reset blijft onaangeroerd; alles eigen staat hier. */
+
+/* ========== 1. Tokens ========== */
+:root {
+  /* spacing-schaal (3.6): alle marges en paddings komen hieruit */
+  --ruimte-1: 0.25rem;  /*  4px */
+  --ruimte-2: 0.5rem;   /*  8px */
+  --ruimte-3: 1rem;     /* 16px */
+  --ruimte-4: 1.5rem;   /* 24px */
+  --ruimte-5: 2rem;     /* 32px */
+  --ruimte-6: 3rem;     /* 48px */
+
+    /* waarom een root voor afstand? lijkt me onnodig */
+
+  /* kleuren */
+  --kleur-tekst: #1f2933;
+  --kleur-tekst-zacht: #52606d;
+  --kleur-achtergrond: #f5f7fa;
+  --kleur-vlak: #ffffff;
+  --kleur-lijn: #d9e2ec;
+  --kleur-accent: #2f6fed;
+
+  /* vorm */
+  --radius: 0.75rem;
+  --schaduw-zacht: 0 2px 8px rgba(31, 41, 51, 0.08);
+  --schaduw-hover: 0 4px 16px rgba(31, 41, 51, 0.14);
+
+  /* leeskolom */
+  --kolom-breedte: 42rem; /* lijkt me ook onnodig */
+}
+
+/* ========== 2. Basis ========== */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--kleur-tekst);
+  background: var(--kleur-achtergrond);
+}
+
+a {
+  color: var(--kleur-accent);
+}
+
+/* ========== 3. Gecentreerde leeskolom ==========
+   max-width + margin: 0 auto; padding links/rechts zodat
+   de tekst op smalle schermen niet tegen de rand plakt. */
+header,
+main,
+footer {
+  max-width: var(--kolom-breedte);
+  margin: 0 auto;
+  padding: var(--ruimte-4) var(--ruimte-3);
+}
+
+/* ========== 4. Eenrichtingsstrategie (3.6) ==========
+   Alleen margin-bottom. Elk element zet ruimte NA zichzelf,
+   nooit ervoor. Zo botsen marges niet en is er één plek om te zoeken. */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--ruimte-3);
+  line-height: 1.25;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; margin-top: 0; }
+h3 { font-size: 1.2rem; }
+
+p,
+ul,
+ol,
+figure,
+blockquote,
+table {
+  margin-bottom: var(--ruimte-3);
+} /* onnodige lengte */
+
+ul,
+ol {
+  padding-left: var(--ruimte-4);
+}
+
+/* laatste kind in een container heeft geen extra ruimte nodig */
+main > :last-child,
+.kaartje > :last-child {
+  margin-bottom: 0;
+}
+
+/* grotere ruimte tussen secties */
+section {
+  margin-bottom: var(--ruimte-6);
+}
+
+/* ========== 5. Navigatie ========== */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ruimte-3);
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+/* ========== 6. Kaartjes (3.5) ==========
+   padding + border-radius + zachte schaduw.
+   Gebruik .kaartje op minstens drie elementen (bv. <article>). */
+.kaartje {
+  padding: var(--ruimte-4);
+  margin-bottom: var(--ruimte-4);
+  background: var(--kleur-vlak);
+  border: 1px solid var(--kleur-lijn);
+  border-radius: var(--radius);
+  box-shadow: var(--schaduw-zacht);
+} /* locatie/afstand is lelijk (niet gecentreerd) ToT */
+
+.kaartje:hover {
+  box-shadow: var(--schaduw-hover);
+}
+
+.kaartje img {
+  width: 100%;              /* grens: past zich aan het kaartje aan */
+  height: auto;
+  border-radius: var(--ruimte-2);
+  margin-bottom: var(--ruimte-3);
+}
+
+/* ========== 7. Footer ========== */
+footer {
+  color: var(--kleur-tekst-zacht);
+  font-size: 0.875rem;
+  border-top: 1px solid var(--kleur-lijn);
+}
