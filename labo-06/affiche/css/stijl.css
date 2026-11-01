@@ -1,0 +1,139 @@
+/* stijl.css - labo 6, affiche (reset.css is linked before this file) */
+
+/* === tokens === */
+:root {
+    --pagina: #1d1d1b;
+    --affiche: #2554ab;
+    --tekst: #fff8ee;
+    --Gcirkel: #ffc83d;
+    --logo: #1d1d1b;
+    --Rcirkel: #d6341c;
+}
+
+/* === base: narrow screens first === */
+
+body {
+    background-color: var(--pagina);
+    color: var(--tekst);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.affiche {
+    background-color: var(--affiche);
+    width: min(28rem, 100% - 2rem);
+    aspect-ratio: 3 / 4;
+    margin-block: 2rem;
+    margin-inline: auto;
+    padding: 1.5rem;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.05;
+}
+
+.ondertitel {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.sticker {
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.prijs, .uitverkocht {border-radius: 50%;}
+
+.datum {
+    background-color: white;
+    color: var(--pagina);
+    top: 1rem;
+    left: 1rem;
+    z-index: 1;
+}
+
+.prijs {
+    background-color: var(--Gcirkel);
+    color: var(--pagina);
+    font-size: 1.25rem;
+    top: 2.5rem;
+    left: 2.5rem;
+    z-index: 2;
+}
+
+.logo {
+    background-color: var(--logo);
+    color: var(--tekst);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.25rem;
+    top: 4rem;
+    left: 4rem;
+    z-index: 3;
+}
+
+.uitverkocht {
+    background-color: var(--Rcirkel);
+    color: var(--tekst);
+    top: 5.5rem;
+    left: 5.5rem;
+    z-index: 4;
+}
+
+/* === media queries: below the base rules === */
+
+@media (min-width: 50rem) {
+    .prijs {
+        font-size: 0.875rem;
+        font-weight: bold;
+    }
+
+    .logo {
+        top: auto;
+        left: auto;
+        bottom: 6rem;
+        right: 6rem;
+    }
+
+    .uitverkocht {
+        top: auto;
+        left: auto;
+        bottom: 3rem;
+        right: 3rem;
+        font-size: 0.60rem;
+    }
+}
+
+@media (min-width: 62.5rem) {
+    .prijs {
+        top: 2rem;
+        left: auto;
+        right: 2rem;
+        font-size: 0.875rem;
+        font-weight: bold;
+    }
+
+    .logo {
+        left: 2rem;
+        right: auto;
+        bottom: 2rem;
+    }
+
+    .uitverkocht {
+        bottom: 2rem;
+        right: 2rem;
+        font-size: 0.60rem;
+    }
+}

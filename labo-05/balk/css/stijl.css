@@ -1,0 +1,126 @@
+/* stijl.css - labo 5, balk (reset.css is linked before this file) */
+
+/* === tokens === */
+:root {
+    --papier: #f8f7f5;
+    --inkt: #1a1a1a;
+    --gedempt: #6b6b6b;
+
+    --balk: #000000;
+    --linksfooter: #9a9a9a;
+    --actievelink: #ffffff;
+}
+
+/* === your rules === */
+
+/*        BALK          */
+header {
+    background-color: var(--balk);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.75;
+
+    height: 3.5rem;
+    padding: 0 2rem;;
+
+    display: flex; /* dubbel flex nodig: deze zet het logo en nav naast elkaar. */
+    justify-content: space-between;
+    align-items: center;
+
+    text-decoration: none;
+    text-transform: capitalize;
+
+    position: sticky;
+    top: 0
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+a.actief {color: var(--actievelink);}
+
+.actief:hover,
+.actief:focus {
+    text-decoration: underline;
+}
+
+header ul {
+    display: flex; /* en deze zet de links naast elkaar ^^ */
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+header a {
+    color: var(--linksfooter);
+    display: block;
+    text-decoration: none;
+    padding: 1.5rem;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+/*        LICHAAM          */
+
+html {
+    scroll-padding-top: 3.5rem;
+}
+
+body {
+    background-color: var(--papier);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+    line-height: 1.6;
+    color: var(--inkt);
+
+    max-width: 48rem; /* 44rem tekst + 2 × 2rem padding */
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+h1 {font-size: 2.5rem;}
+h2 {font-size: 1.75rem;}
+
+.intro {color: var(--gedempt);}
+
+main ol {margin-bottom: 3rem;}
+main a {color: var(--inkt);}
+main section {margin-bottom: 3rem;}
+
+/*        FOOTER          */
+
+footer {
+    background-color: var(--balk);
+    color: var(--linksfooter);
+    font-size: 0.875;
+
+    height: 3.5rem;
+
+    /*OM TEKST EXACT IN HET CENTER TE ZETTEN*/
+
+    /*
+    Je kan dit doen:
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    maar onderstaande is korter en simpeler 
+    dus als het kan deze gebruiken
+    */
+
+    display: grid;
+	place-items: center;
+
+}

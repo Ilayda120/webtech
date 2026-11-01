@@ -1,0 +1,201 @@
+/* stijl.css - labo 5, koffiebar (reset.css is linked before this file) */
+
+/* === tokens === */
+:root {
+    --papier: #f4efe6;
+    --kaart: #ffffff;
+    --inkt: #2b2b2b;
+    --gedempt: #6b6b6b;
+    --balkfooter: #2f241d;
+    --tekst: #f4efe6;
+    --accent: #c8742e;
+    --rand: #ddd5c8;
+}
+
+/* === your rules === */
+
+body {
+    background-color: var(--papier);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.6;
+    color: var(--inkt);
+
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "aside kaart"
+        "footer footer";
+}
+
+/*  BALK    */
+
+header {
+    background-color: var(--balkfooter);
+    color: var(--tekst);
+    font-size: 0.875rem;
+
+    display: flex;
+    align-items: center;
+    height: 3.5rem;
+    padding: 0 2rem;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    grid-area: header;
+}
+
+.logo {
+    margin-right: auto;
+    color: var(--accent);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+nav a {
+    color: var(--tekst);
+    text-decoration: none;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+}
+
+.actief {
+    color: var(--accent);
+}
+
+nav a:hover,
+nav a:focus {
+    text-decoration: underline;
+}
+
+/*      ZIJBALK     */
+
+aside {
+    padding: 2rem;
+    font-size: 0.875rem;
+    border-right: 1px solid var(--rand);
+    color: var(--gedempt);
+
+    grid-area: aside;
+}
+
+aside h2 {
+    color: var(--inkt);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    line-height: 2.5rem;
+}
+
+/*      KAART       */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+
+    grid-area: kaart;
+}
+
+.intro {
+    font-size: 0.875rem;
+    color: var(--gedempt);
+}
+
+.kaarten {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.kaart {
+    background-color: var(--kaart);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+    /* knipt de scherpe hoeken van foto af*/
+}
+
+.kaart:has(img) {
+    padding: 0; 
+    /*foto is direct het top, heeft geen afstand*/
+}
+
+.kaart:not(:has(img)) {
+    border-top: 0.5rem solid var(--accent); 
+    /*  geeft de lijn voor kaarten zonder foto*/
+}
+
+img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    width: 100%;
+}
+
+.tekst {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.kaart:has(img) .tekst {
+    padding: 1.5rem;
+    /* Zorgt ervoor dat titel van kaart niet 
+    aan foto plakt/niet zo dicht bij is*/
+}
+
+.tekst h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+}
+
+.prijs {
+    margin-top: auto;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.badge {
+    background-color: var(--accent);
+    color: var(--kaart);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+
+    position: absolute; /*  remember kijken naar directe ouder/container niet nr hele pagina*/
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+}
+
+/*      FOOTER      */
+
+footer {
+    background-color: var(--balkfooter);
+    text-align: center;
+    color: var(--tekst);
+    font-size: 0.875rem;
+    padding: 1rem;
+
+    grid-area: footer;
+}

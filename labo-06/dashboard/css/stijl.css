@@ -1,0 +1,64 @@
+/* stijl.css - labo 6, dashboard (reset.css is linked before this file) */
+
+/* === tokens === */
+:root {
+    --papier: #f3f1ec;
+    --tegelstitel: #1f2933;
+    --grafiek: #2c6e8f;
+    --omzet: #c8742e;
+    --bezoekers: #3b7a2a;
+    --agenda: #6b4fa3;
+    --taken: #b2323a;
+    --weer: #e0b43a;
+    --dktekst: #1f2933;
+}
+
+/* === base: narrow screens first === */
+
+body {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+main {
+    background-color: var(--papier);
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+section {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    min-height: 6rem;
+}
+
+.titel {background-color: var(--tegelstitel); font-size: 1.5rem; }
+.grafiek {background-color: var(--grafiek); }
+.omzet {background-color: var(--omzet); }
+.bezoekers {background-color: var(--bezoekers); }
+.agenda {background-color: var(--agenda); }
+.taken {background-color: var(--taken); }
+.weer {background-color: var(--weer); color: var(--dktekst); }
+
+/* === media queries: below the base rules === */
+
+@media (min-width: 50rem) {
+    main {grid-template-columns: 1fr 1fr; } /*alle vakjes--v*/
+    .titel, .grafiek, .weer {grid-column: 1 / -1; } /*BEHALVE deze drie, worden gesplist in twee; twee kolomen :p*/
+}
+
+@media (min-width: 75rem) {
+    main {
+        min-height: 100svh;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto 1fr 1fr;
+    }
+    .grafiek {grid-column: 1 / 3; grid-row: 2 / 4; }
+    .omzet {grid-column: 3; grid-row: 2; }
+    .agenda {grid-column: 4; grid-row: 2; }
+    .bezoekers {grid-column: 3; grid-row: 3; }
+    .taken {grid-column: 4; grid-row: 3; }
+}

@@ -1,0 +1,153 @@
+/* stijl.css - labo 6, festival (reset.css is linked before this file) */
+
+/* === tokens === */
+:root {
+    --papier: #fff8ee;
+    --inkt: #1a1a1a;
+    --gedempt: #6b6b6b;
+    --accent: #d6341c;
+    --onderlijn: #e3d9c8;
+}
+
+/* === base: narrow screens first === */
+
+body {
+    background-color: var(--papier);
+    color: var(--inkt);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.6;
+}
+
+/*  TABLADEN    */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+}
+
+.logo {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+nav {width: 100%;}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    border-radius: 2rem;
+    padding: 0.75rem 1.25rem;
+}
+
+nav a.actief {
+    color: white;
+    background-color: var(--accent);
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--inkt);
+    background-color: white;
+}
+
+/*  DATUM   */
+
+.held {
+    background-color: var(--accent);
+    color: white;
+    padding: 2rem 1rem;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    line-height: 1.1;
+}
+
+/*  PAGINA INHOUD   */
+
+.held + section {
+    max-width: 44rem;
+    margin-inline: auto;
+    padding: 1.5rem 1rem;
+}
+
+h2 {font-family: Georgia, 'Times New Roman', Times, serif;}
+
+.programma {
+    list-style: none;
+    padding: 0;
+}
+
+.programma li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--onderlijn);
+}
+
+.programma time {
+    min-width: 4rem;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.programma strong {
+    font-weight: bold;
+}
+
+.programma span {
+    margin-left: auto;
+    color: var(--gedempt);
+    text-align: right;
+}
+
+footer {
+    color: var(--gedempt);
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* === media queries: below the base rules === */
+
+@media (min-width: 50rem) {
+    nav ul {flex-direction: row; justify-content: center;}
+
+    .held {padding: 4rem 2rem;}
+
+    h1 {font-size: 3rem;}
+
+    .held + section {padding: 2rem 2rem;}
+}
+
+@media (min-width: 75rem) {
+    header {flex-direction: row; padding-inline: 3rem;}
+
+    .logo {margin-right: auto;}
+
+    nav {width: auto;}
+
+    .held {padding: 6rem 3rem;}
+
+    h1 {font-size: 4rem;}
+}

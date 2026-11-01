@@ -1,0 +1,99 @@
+/* stijl.css - labo 5, citaten (reset.css is linked before this file) */
+
+/* === tokens === */
+:root {
+--blauw: #1e5bd8;
+--roze: #e88bb4;
+--rood: #c51f2a;
+--oranje: #d98c1a;
+--groen: #3b7a2a;
+--salie: #8fb89a;
+--paars: #7b4fa3;
+--grijs: #6b6b6b;
+}
+
+/* === your rules === */
+
+/*CITATEN IS DE CONTAINER*/
+.citaten { 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.875rem;
+
+    gap: 1.5rem;
+    margin: 1.5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.citaat {
+    flex: 1 1 18rem;
+    padding: 0.5rem 1rem;
+    line-height: 1.5rem;
+}
+
+/*                  NOTITIES ^^         
+            === flex: 1 1 18rem ===
+   Staat op het ITEM (.citaat), niet op de container.
+   Verkorte schrijfwijze: flex: <grow> <shrink> <basis>
+
+   grow 1     -> items verdelen de overgebleven ruimte in de rij gelijk,
+                 zodat de rij tot de rand gevuld is
+   shrink 1   -> item mag krimpen bij te weinig plaats
+                 (bij flex-wrap bijna nooit nodig: eerst breken, dan krimpen)
+   basis 18rem -> startbreedte; flexbox rekent hiermee uit hoeveel items
+                 er op een rij passen, dus geen media query nodig
+
+
+            === flex-wrap: wrap ===
+   Staat op de CONTAINER (.citaten).
+   Zonder wrap blijven alle items op één rij en worden ze samengedrukt.
+   Met wrap breken ze naar een nieuwe rij als de basis niet meer past.
+
+   Rekensom (basis 18rem, gap 1.5rem, rand 1.5rem):
+   1280px -> 4 x 18 + 3 x 1.5 = 76.5rem -> 4 per rij
+    800px -> 2 x 18 + 1.5   = 37.5rem -> 2 per rij
+*/
+
+p {
+    font-weight: bold;
+}
+
+cite {
+    font-style: normal;
+    font-size: 0.875rem;
+}
+
+.blauw {
+    color: var(--blauw);
+    border-left: 0.5rem solid currentColor;
+}
+
+.roze {
+    color: var(--roze);
+    border-left: 0.5rem solid currentColor;
+}
+.rood {
+    color: var(--rood);
+    border-left: 0.5rem solid currentColor;
+}
+.oranje {
+    color: var(--oranje);
+    border-left: 0.5rem solid currentColor;
+}
+.groen {
+    color: var(--groen);
+    border-left: 0.5rem solid currentColor;
+}
+.salie {
+    color: var(--salie);
+    border-left: 0.5rem solid currentColor;
+}
+.paars {
+    color: var(--paars);
+    border-left: 0.5rem solid currentColor;
+}
+.grijs {
+    color: var(--grijs);
+    border-left: 0.5rem solid currentColor;
+}
